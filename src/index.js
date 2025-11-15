@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 const chatRouter = require('./routes/chat');
 
 const app = express();
@@ -21,6 +22,6 @@ app.get('/', (req, res) => {
 app.use('/api/chat', chatRouter);
 
 // Levantar servidor
-app.listen(PORT, () => {
-  console.log(`Servidor Monito escuchando en el puerto ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor Monito escuchando en http://0.0.0.0:${PORT}`);
 });

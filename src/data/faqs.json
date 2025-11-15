@@ -1,0 +1,32 @@
+[
+  {
+    "id": "horarios",
+    "question": "¿Cuáles son los horarios de atención?",
+    "keywords": ["horario", "horarios", "abren", "cierran", "atencion"],
+    "answer": "Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00 horas y los sábados de 10:00 a 14:00."
+  },
+  {
+    "id": "ubicacion",
+    "question": "¿Dónde están ubicados?",
+    "keywords": ["ubicacion", "direccion", "donde estan", "como llegar"],
+    "answer": "Estamos ubicados en Av. Ejemplo 123, Col. Centro. Puedes encontrarnos en Google Maps buscando 'Empresa Monito'."
+  },
+  {
+    "id": "contacto",
+    "question": "¿Cómo puedo contactar con ustedes?",
+    "keywords": ["contacto", "telefono", "correo", "whatsapp", "contactar"],
+    "answer": "Puedes escribirnos por WhatsApp al +52 55 0000 0000 o al correo contacto@empresa-monito.com."
+  },
+  {
+    "id": "servicios",
+    "question": "¿Qué servicios ofrecen?",
+    "keywords": ["servicios", "ofrecen", "que hacen", "productos"],
+    "answer": "Ofrecemos asesoría personalizada, soporte técnico y capacitación. Si me cuentas qué necesitas, puedo orientarte mejor."
+  },
+  {
+    "id": "precios",
+    "question": "¿Manejan precios o cotizaciones?",
+    "keywords": ["precio", "precios", "costo", "cotizacion", "cotizar"],
+    "answer": "Manejamos cotizaciones personalizadas según tu caso. Compárteme qué servicio te interesa y te explico cómo sería el proceso."
+  }
+]
