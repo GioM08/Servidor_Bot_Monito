@@ -13,14 +13,14 @@ app.use(express.json());
 app.use('/api/chat', chatRouter);  
 
 // Servir el frontend compilado (Vue)
-const clientPath = path.join(__dirname, '../../../Cliente_Bot_Monito/dist'); 
+const clientPath = '/home/gio/Cliente_Bot_Monito/dist';
 // Ajusta la ruta si tu carpeta está en otro nivel
 
 app.use(express.static(clientPath));
 
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(clientPath, 'index.html'));
-})
+});
 
 // Ruta de prueba
 app.get('/', (req, res) => {
