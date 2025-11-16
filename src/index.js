@@ -8,32 +8,36 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middlewares
-app.use(cors());          
-app.use(express.json()); 
-app.use('/api/chat', chatRouter);  
+app.use(cors());
+app.use(express.json());
 
-// Servir el frontend compilado (Vue)
-const clientPath = '/home/gio/Cliente_Bot_Monito/dist';
-// Ajusta la ruta si tu carpeta está en otro nivel
+// ================== RUTAS DE API ==================
 
-app.use(express.static(clientPath));
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(clientPath, 'index.html'));
-});
-
-// Ruta de prueba
-app.get('/', (req, res) => {
+// Ruta de prueba para la API
+app.get('/api', (req, res) => {
   res.json({
     status: 'ok',
     message: 'API de Monito está viva 🚀'
   });
 });
 
-// Rutas
+// Ruta del chatbot
 app.use('/api/chat', chatRouter);
 
-// Levantar servidor
+// ================== FRONTEND (VUE BUILD) ==================
+
+// Ruta al dist de tu cliente
+const clientPath = '/home/gio/Cliente_Bot_Monito/dist';
+
+
+app.use(express.static(clientPath));
+
+
+app.use((req, res) => {
+  res.sendFile(path.join(clientPath, 'index.html'));
+});
+
+// ================== LEVANTAR SERVIDOR ==================
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor Monito escuchando en http://0.0.0.0:${PORT}`);
 });
