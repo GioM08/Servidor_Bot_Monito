@@ -3,6 +3,8 @@ const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
 const chatRouter = require('./routes/chat');
+const swaggerDocs = require('./swagger');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,6 +22,9 @@ app.get('/api', (req, res) => {
     message: 'API de Monito está viva 🚀'
   });
 });
+
+swaggerDocs(app);
+
 
 // Ruta del chatbot
 app.use('/api/chat', chatRouter);
